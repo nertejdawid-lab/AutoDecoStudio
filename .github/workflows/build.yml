@@ -1,0 +1,28 @@
+
+name: Build Auto Deco Studio (Windows)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Windows mod
+        id: geode
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          sdk: given
+          target: Win64
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AutoDecoStudio-Windows
+          path: ${{ steps.geode.outputs.build-output }}/*.geode
+          if-no-files-found: error
