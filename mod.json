@@ -1,0 +1,17 @@
+{
+  "geode": "5.11.2",
+  "gd": { "win": "2.2081" },
+  "id": "community.auto-deco-studio",
+  "name": "Auto Deco Studio",
+  "version": "v1.0.0",
+  "developer": "Community Project",
+  "description": "Generate non-solid decorative patterns on selected editor blocks. Four themes: Hell, Purple Hell, Heaven/Ice, Dark Monochrome.",
+  "settings": {
+    "intensity": {
+      "type": "int", "name": "Deco Intensity", "default": 60, "min": 0, "max": 100,
+      "control": { "slider": true, "slider-step": 5, "arrows": true }
+    },
+    "glow": { "type": "bool", "name": "Add Glow", "default": true },
+    "air": { "type": "bool", "name": "Add Air Details", "default": true }
+  }
+}
